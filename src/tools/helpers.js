@@ -32,7 +32,6 @@ export const createContainer = (props) => {
 
 export const createDiv = (quantity) => {
   const result = [];
-  // eslint-ignore no-plusplus
   for (let i = 0; i < quantity; i += 1) {
     result.push(document.createElement('div'));
   }

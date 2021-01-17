@@ -14,10 +14,6 @@ module.exports = merge(common, {
     filename: 'js/[name].[contenthash].bundle.js',
   },
   plugins: [
-    // Extracts CSS into separate files
-    // Note: style-loader is for development, MiniCssExtractPlugin is for production
-    // Извлекать CSS в отдельные файлы
-    // Обратите внимание, что style-loader предназначен для разработки, а MiniCssExtractPlugin - для продакшна
     new MiniCssExtractPlugin({
       filename: 'styles/[name].[contenthash].css',
       chunkFilename: '[id].css',
