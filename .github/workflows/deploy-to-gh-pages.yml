@@ -1,25 +1,22 @@
 name: MasterDeployCI
-on:
-  push:
-    branches:
-      - master
+
+on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [10.x]
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install Packages
-        run: npm install
-      - name: Deploy to GH Pages
-        run: |
-          git config --global user.email ${{secrets.EMAIL_GITHUB}}
-          git config --global user.name ${{secrets.USERNAME_GITHUB}}
-          git remote set-url origin https://${{secrets.PER_TOKEN_GITHUB}}@github.com/${{secrets.USERNAME_GITHUB}}>/loader-netology-js.git
-          npm run deploy
+          node-version: 10.x
+      - run: |
+          yarn && yarn build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: dist
+          CLEAN: true

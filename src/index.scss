@@ -7,3 +7,31 @@
 	box-sizing: border-box;
 	font-weight: normal;
 }
+
+@font-face {
+	font-family: 'Golos Text Sans';
+	src: url('../public/fonts/golos-bold.woff') format('woff');
+	font-style: normal;
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: 'Golos Text Sans';
+	src: url('../public/fonts/golos-demi-bold.woff') format('woff');
+	font-style: normal;
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: 'Golos Text Sans';
+	src: url('../public/fonts/golos-medium.woff') format('woff');
+	font-style: normal;
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Golos Text Sans';
+	src: url('../public/fonts/golos-regular.woff') format('woff');
+	font-style: normal;
+	font-weight: 500;
+}
